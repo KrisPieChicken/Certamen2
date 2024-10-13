@@ -50,6 +50,7 @@
             this.asignaturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -94,6 +95,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label4);
@@ -248,6 +250,15 @@
             this.notasToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.notasToolStripMenuItem.Text = "Notas";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(249, 103);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(90, 24);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,5 +305,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_;
         private System.Windows.Forms.DataGridViewTextBoxColumn ano_;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_;
+        private System.Windows.Forms.Button button3;
     }
 }

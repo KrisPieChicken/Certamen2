@@ -49,6 +49,7 @@ namespace Certamen2.Semestre
                         semestre.estado_
                      );
                 }
+                LimpiartextFields();
                 MessageBox.Show("Semestre guardado");
             }
         }
@@ -62,11 +63,16 @@ namespace Certamen2.Semestre
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Clean text fields
+            LimpiartextFields();
+
+        }
+
+        public void LimpiartextFields()
+        {
             txt_nombre.Text = "";
             txt_ano.Text = "";
             cmBox.Text = "";
-
         }
+
     }
 }

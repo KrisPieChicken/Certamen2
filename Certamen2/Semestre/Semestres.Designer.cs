@@ -247,15 +247,7 @@
             this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
             this.notasToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.notasToolStripMenuItem.Text = "Notas";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(249, 103);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 24);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+           
             // 
             // Form2
             // 

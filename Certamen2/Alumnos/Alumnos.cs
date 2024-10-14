@@ -1,4 +1,5 @@
 ﻿
+using Certamen2.Asignatura;
 using Certamen2.Semestre;
 using System;
 using System.Collections.Generic;
@@ -14,15 +15,9 @@ namespace Certamen2
         {
             InitializeComponent();
             this.txt_matricula.KeyPress += new KeyPressEventHandler(this.txt_matricula_KeyPress);
+            LoadAlumnos();
         }
 
-        /// <summary>
-        /// Método que se ejecuta al hacer clic en el botón "Guardar Alumnos".
-        /// Obtiene los valores de los campos de texto y verifica si están vacíos.
-        /// Si alguno de los campos está vacío, muestra un mensaje de error.
-        /// Si todos los campos están completos, llama al método GuardarAlumno para guardar el alumno.
-        /// Luego, limpia los campos de texto y muestra un mensaje de éxito.
-        /// </summary>
         private void btn_guardar_alumnos_Click(object sender, EventArgs e)
         {
             string txt_Nombre = txt_nombre.Text;
@@ -61,12 +56,6 @@ namespace Certamen2
             }
         }
 
-    
-        /// <summary>
-        /// Método que se ejecuta al presionar una tecla en el campo de texto "txt_matricula".
-        /// Verifica si la tecla presionada es un dígito o un carácter de control.
-        /// Si no es un dígito ni un carácter de control, se bloquea la entrada de la tecla.
-        /// </summary>
         private void txt_matricula_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -77,9 +66,30 @@ namespace Certamen2
 
         private void semestreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.Show();
-            this.Hide();
+            NavigacionControl.Abrir(this, new SemestreForm.Form2());
+        }
+        private void LoadAlumnos()
+        {
+            dataGridView1.Rows.Clear(); 
+            foreach (var alumno in Listados.listaAlumnos)
+            {
+                dataGridView1.Rows.Add(alumno.ID_Alumno, alumno.Nombre, alumno.Apellido, alumno.Matricula);
+            }
+        }
+
+        private void asignaturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigacionControl.Abrir(this, new Form3());
+        }
+
+        private void ingresoCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigacionControl.Abrir(this, new Curso.Form4());
+        }
+
+        private void notasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigacionControl.Abrir(this, new Notas.Form5());
         }
     }
 }

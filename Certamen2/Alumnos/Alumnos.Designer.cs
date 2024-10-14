@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.txt_matricula = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID_Alumnos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.lbl_apellido = new System.Windows.Forms.Label();
             this.lbl_matricula = new System.Windows.Forms.Label();
@@ -77,20 +81,45 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Alumnos,
+            this.Nombre,
+            this.Apellido,
+            this.Matricula});
             this.dataGridView1.Location = new System.Drawing.Point(45, 207);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(584, 222);
+            this.dataGridView1.Size = new System.Drawing.Size(636, 222);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // ID_Alumnos
+            // 
+            this.ID_Alumnos.HeaderText = "ID Alumnos";
+            this.ID_Alumnos.Name = "ID_Alumnos";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            // 
+            // Matricula
+            // 
+            this.Matricula.HeaderText = "Matricula";
+            this.Matricula.Name = "Matricula";
             // 
             // lbl_nombre
             // 
@@ -125,6 +154,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.lbl_apellido);
+            this.panel1.Controls.Add(this.btn_guardar_alumnos);
             this.panel1.Controls.Add(this.txt_nombre);
             this.panel1.Controls.Add(this.lbl_matricula);
             this.panel1.Controls.Add(this.txt_apellido);
@@ -132,15 +162,15 @@
             this.panel1.Controls.Add(this.lbl_nombre);
             this.panel1.Location = new System.Drawing.Point(46, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(584, 139);
+            this.panel1.Size = new System.Drawing.Size(635, 139);
             this.panel1.TabIndex = 8;
             // 
             // btn_guardar_alumnos
             // 
             this.btn_guardar_alumnos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardar_alumnos.Location = new System.Drawing.Point(636, 95);
+            this.btn_guardar_alumnos.Location = new System.Drawing.Point(508, 106);
             this.btn_guardar_alumnos.Name = "btn_guardar_alumnos";
-            this.btn_guardar_alumnos.Size = new System.Drawing.Size(124, 46);
+            this.btn_guardar_alumnos.Size = new System.Drawing.Size(124, 30);
             this.btn_guardar_alumnos.TabIndex = 9;
             this.btn_guardar_alumnos.Text = "Guardar";
             this.btn_guardar_alumnos.UseVisualStyleBackColor = true;
@@ -152,7 +182,7 @@
             this.principalToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(710, 33);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -187,18 +217,21 @@
             this.asignaturaToolStripMenuItem.Name = "asignaturaToolStripMenuItem";
             this.asignaturaToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.asignaturaToolStripMenuItem.Text = "Asignatura";
+            this.asignaturaToolStripMenuItem.Click += new System.EventHandler(this.asignaturaToolStripMenuItem_Click);
             // 
             // ingresoCursoToolStripMenuItem
             // 
             this.ingresoCursoToolStripMenuItem.Name = "ingresoCursoToolStripMenuItem";
             this.ingresoCursoToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.ingresoCursoToolStripMenuItem.Text = "Ingreso Curso";
+            this.ingresoCursoToolStripMenuItem.Click += new System.EventHandler(this.ingresoCursoToolStripMenuItem_Click);
             // 
             // notasToolStripMenuItem
             // 
             this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
             this.notasToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.notasToolStripMenuItem.Text = "Notas";
+            this.notasToolStripMenuItem.Click += new System.EventHandler(this.notasToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -214,9 +247,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(710, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_guardar_alumnos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
@@ -253,6 +285,10 @@
         private System.Windows.Forms.ToolStripMenuItem ingresoCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Alumnos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
     }
 }
 
